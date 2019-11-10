@@ -2,15 +2,20 @@
   <div class="header">
     <P>我是Header</P>
     <div class="tab">
-      <div v-on:click="$emit('clickHome')">首页</div>
-      <div v-on:click="$emit('clickAbout')">关于我们</div>
+      <div v-on:click="switchTab('/')">首页</div>
+      <div v-on:click="switchTab('/about')">关于我们</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MyHeader"
+  name: "MyHeader",
+  methods: {
+    switchTab: function(path) {
+      this.$emit('switchPath', path);
+    }
+  }
 };
 </script>
 <style scoped>
@@ -22,14 +27,14 @@ export default {
   color: #ffffff;
   position: relative;
 }
-.tab{
-  position:absolute;
+.tab {
+  position: absolute;
   bottom: 0;
 }
-.tab div{
+.tab div {
   display: inline-block;
   padding: 10px 20px;
-  background-color:cyan;
+  background-color: cyan;
   margin-right: 10px;
 }
 </style>

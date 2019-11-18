@@ -5,7 +5,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  created: function() {
+    window.console.log(this.$route.query);
+  },
+};
 </script>
 
 <style scoped>

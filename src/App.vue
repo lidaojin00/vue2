@@ -16,6 +16,9 @@ export default {
     MyHeader,
     MyFooter
   },
+  created(){
+    alert(process.env.VUE_APP_BASE_URL);
+  },
   methods: {
     goHome: function(path) {
       this.$router.push(path);
